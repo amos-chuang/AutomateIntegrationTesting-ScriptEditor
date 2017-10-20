@@ -1,0 +1,14 @@
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\aBotScriptEditor.exe.config
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\aBotScriptEditor.exe
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\aBotScriptEditor.pdb
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\obj\Debug\aBotScriptEditor.csprojResolveAssemblyReference.cache
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\obj\Debug\aBotScriptEditor.Form1.resources
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\obj\Debug\aBotScriptEditor.Properties.Resources.resources
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\obj\Debug\aBotScriptEditor.csproj.GenerateResource.Cache
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\obj\Debug\aBotScriptEditor.exe
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\obj\Debug\aBotScriptEditor.pdb
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\HtmlAgilityPack.dll
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\HtmlAgilityPack.pdb
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\HtmlAgilityPack.xml
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\Newtonsoft.Json.dll
+c:\users\amos_chuang\documents\visual studio 2013\Projects\aBotScriptEditor\aBotScriptEditor\bin\Debug\Newtonsoft.Json.xml
