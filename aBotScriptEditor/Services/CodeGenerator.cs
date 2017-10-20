@@ -100,7 +100,7 @@ namespace aBotScriptEditor.Services
 
         public string TakeScreenshot(string fileName)
         {
-            string result = String.Format("takeScreenshot(\"{0}\")",fileName);
+            string result = String.Format("takeScreenshot(\"{0}\");",fileName);
             return result;
         }
     }
