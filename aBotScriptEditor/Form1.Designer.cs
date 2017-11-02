@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button11 = new System.Windows.Forms.Button();
+            this.numNth = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.cbNth = new System.Windows.Forms.ComboBox();
@@ -80,16 +82,15 @@
             this.開啟ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.儲存ctrlsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.另存新檔ctrlshiftsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.numNth = new System.Windows.Forms.NumericUpDown();
-            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttributes)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNth)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -101,6 +102,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.button12);
             this.splitContainer1.Panel1.Controls.Add(this.button11);
             this.splitContainer1.Panel1.Controls.Add(this.numNth);
             this.splitContainer1.Panel1.Controls.Add(this.label16);
@@ -155,6 +157,25 @@
             this.splitContainer1.SplitterDistance = 270;
             this.splitContainer1.TabIndex = 0;
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(227, 322);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(30, 23);
+            this.button11.TabIndex = 47;
+            this.button11.Text = ">";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.GenerateSelector);
+            // 
+            // numNth
+            // 
+            this.numNth.Location = new System.Drawing.Point(113, 322);
+            this.numNth.Name = "numNth";
+            this.numNth.Size = new System.Drawing.Size(69, 22);
+            this.numNth.TabIndex = 46;
+            this.numNth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numNth.ValueChanged += new System.EventHandler(this.GenerateSelector);
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -188,7 +209,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(213, 628);
+            this.button10.Location = new System.Drawing.Point(157, 607);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(44, 23);
             this.button10.TabIndex = 41;
@@ -198,16 +219,16 @@
             // 
             // txtScreenshotName
             // 
-            this.txtScreenshotName.Location = new System.Drawing.Point(90, 628);
+            this.txtScreenshotName.Location = new System.Drawing.Point(69, 607);
             this.txtScreenshotName.Name = "txtScreenshotName";
-            this.txtScreenshotName.Size = new System.Drawing.Size(100, 22);
+            this.txtScreenshotName.Size = new System.Drawing.Size(83, 22);
             this.txtScreenshotName.TabIndex = 40;
             this.txtScreenshotName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(37, 633);
+            this.label14.Location = new System.Drawing.Point(10, 612);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(47, 12);
             this.label14.TabIndex = 39;
@@ -251,7 +272,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(11, 358);
+            this.label12.Location = new System.Drawing.Point(10, 358);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(47, 12);
             this.label12.TabIndex = 34;
@@ -301,7 +322,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(213, 580);
+            this.button8.Location = new System.Drawing.Point(213, 571);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(44, 23);
             this.button8.TabIndex = 28;
@@ -311,16 +332,16 @@
             // 
             // txtExpectValue
             // 
-            this.txtExpectValue.Location = new System.Drawing.Point(90, 580);
+            this.txtExpectValue.Location = new System.Drawing.Point(69, 571);
             this.txtExpectValue.Name = "txtExpectValue";
-            this.txtExpectValue.Size = new System.Drawing.Size(100, 22);
+            this.txtExpectValue.Size = new System.Drawing.Size(132, 22);
             this.txtExpectValue.TabIndex = 27;
             this.txtExpectValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(31, 585);
+            this.label9.Location = new System.Drawing.Point(10, 576);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 12);
             this.label9.TabIndex = 26;
@@ -328,7 +349,7 @@
             // 
             // txtConditionVarName
             // 
-            this.txtConditionVarName.Location = new System.Drawing.Point(64, 552);
+            this.txtConditionVarName.Location = new System.Drawing.Point(42, 543);
             this.txtConditionVarName.Name = "txtConditionVarName";
             this.txtConditionVarName.Size = new System.Drawing.Size(100, 22);
             this.txtConditionVarName.TabIndex = 25;
@@ -337,7 +358,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 557);
+            this.label8.Location = new System.Drawing.Point(10, 548);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(29, 12);
             this.label8.TabIndex = 24;
@@ -526,7 +547,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(19, 483);
+            this.label7.Location = new System.Drawing.Point(10, 483);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(17, 12);
             this.label7.TabIndex = 22;
@@ -543,7 +564,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 511);
+            this.label6.Location = new System.Drawing.Point(10, 511);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 12);
             this.label6.TabIndex = 20;
@@ -636,7 +657,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 416);
+            this.label3.Location = new System.Drawing.Point(10, 416);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 9;
@@ -673,7 +694,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 387);
+            this.label2.Location = new System.Drawing.Point(10, 387);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 12);
             this.label2.TabIndex = 5;
@@ -774,24 +795,15 @@
             this.另存新檔ctrlshiftsToolStripMenuItem.Text = "另存新檔";
             this.另存新檔ctrlshiftsToolStripMenuItem.Click += new System.EventHandler(this.另存新檔ctrlshiftsToolStripMenuItem_Click);
             // 
-            // numNth
+            // button12
             // 
-            this.numNth.Location = new System.Drawing.Point(113, 322);
-            this.numNth.Name = "numNth";
-            this.numNth.Size = new System.Drawing.Size(69, 22);
-            this.numNth.TabIndex = 46;
-            this.numNth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numNth.ValueChanged += new System.EventHandler(this.GenerateSelector);
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(227, 322);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(30, 23);
-            this.button11.TabIndex = 47;
-            this.button11.Text = ">";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.GenerateSelector);
+            this.button12.Location = new System.Drawing.Point(207, 607);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(56, 23);
+            this.button12.TabIndex = 48;
+            this.button12.Text = "截全圖";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // Form1
             // 
@@ -812,11 +824,11 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numNth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttributes)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNth)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -876,6 +888,7 @@
         private System.Windows.Forms.ComboBox cbNth;
         private System.Windows.Forms.NumericUpDown numNth;
         private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button12;
 
 
     }

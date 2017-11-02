@@ -291,6 +291,13 @@ namespace aBotScriptEditor
             InsertCode(code);
         }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            CodeGenerator cg = new CodeGenerator();
+            string code = cg.TakeEntireScreenshot(this.txtScreenshotName.Text);
+            InsertCode(code);
+        }
+
         private void GenerateSelector(object sender, EventArgs e)
         {
             int nthOfType = 0;
@@ -312,5 +319,6 @@ namespace aBotScriptEditor
             }
             this.txtSelector.Text = new CodeGenerator().CssSelector(this.elementInfo.TagName, this.elementInfo.Attributes, nthOfType, nthChild);
         }
+
     }
 }

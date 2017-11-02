@@ -111,5 +111,11 @@ namespace aBotScriptEditor.Services
             string result = String.Format("takeScreenshot(\"{0}\");",fileName);
             return result;
         }
+
+        public string TakeEntireScreenshot(string fileName)
+        {
+            string result = String.Format("takeEntireScreenshot(\"{0}\");", fileName);
+            return result;
+        }
     }
 }
