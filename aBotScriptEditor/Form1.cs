@@ -63,12 +63,15 @@ namespace aBotScriptEditor
             this.txtTagName.Text = this.elementInfo.TagName;
             this.dgvAttributes.DataSource = null;
             this.dgvAttributes.Rows.Clear();
-            foreach (KeyValuePair<string, string> kv in this.elementInfo.Attributes)
+            if (this.elementInfo.Attributes != null)
             {
-                this.dgvAttributes.Rows.Add(kv.Key, kv.Value);
+                foreach (KeyValuePair<string, string> kv in this.elementInfo.Attributes)
+                {
+                    this.dgvAttributes.Rows.Add(kv.Key, kv.Value);
+                }
             }
             this.dgvAttributes.Tag = "";
-            this.txtSelector.Text = new CodeGenerator().CssSelector(this.elementInfo.TagName, this.elementInfo.Attributes);
+            GenerateSelector(null, null);
         }
 
         private void RefreshElementInfoAttributes()
@@ -85,7 +88,7 @@ namespace aBotScriptEditor
                         this.elementInfo.Attributes.Add(key.ToString(), value.ToString());
                     }
                 }
-                this.txtSelector.Text = new CodeGenerator().CssSelector(this.elementInfo.TagName, this.elementInfo.Attributes);
+                GenerateSelector(null, null);
             }
         }
 
@@ -181,6 +184,7 @@ namespace aBotScriptEditor
         private void button1_Click(object sender, EventArgs e)
         {
             CodeGenerator cg = new CodeGenerator();
+            this.elementInfo.CssSelector = this.txtSelector.Text;
             string code = cg.Click(this.elementInfo);
             InsertCode(code);
         }
@@ -188,6 +192,7 @@ namespace aBotScriptEditor
         private void button2_Click(object sender, EventArgs e)
         {
             CodeGenerator cg = new CodeGenerator();
+            this.elementInfo.CssSelector = this.txtSelector.Text;
             string code = cg.SetValue(this.elementInfo, this.txtValue.Text);
             InsertCode(code);
         }
@@ -203,6 +208,7 @@ namespace aBotScriptEditor
         private void button4_Click(object sender, EventArgs e)
         {
             CodeGenerator cg = new CodeGenerator();
+            this.elementInfo.CssSelector = this.txtSelector.Text;
             string code = cg.WaitForExist(this.elementInfo);
             InsertCode(code);
         }
@@ -258,7 +264,7 @@ namespace aBotScriptEditor
                     attrName = temp;
                 }
             }
-            if(this.txtAttributeName.Text!=null)
+            if (this.txtAttributeName.Text != null)
             {
                 string temp = this.txtAttributeName.Text.Trim();
                 if (temp.Length > 0)
@@ -266,14 +272,15 @@ namespace aBotScriptEditor
                     attrName = temp;
                 }
             }
-            string code = cg.GetAttribute(this.elementInfo,this.txtVarName.Text,attrName);
+            this.elementInfo.CssSelector = this.txtSelector.Text;
+            string code = cg.GetAttribute(this.elementInfo, this.txtVarName.Text, attrName);
             InsertCode(code);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
             CodeGenerator cg = new CodeGenerator();
-            string code = cg.ShouldEqual(this.txtConditionVarName.Text,this.txtExpectValue.Text);
+            string code = cg.ShouldEqual(this.txtConditionVarName.Text, this.txtExpectValue.Text);
             InsertCode(code);
         }
 
@@ -282,6 +289,28 @@ namespace aBotScriptEditor
             CodeGenerator cg = new CodeGenerator();
             string code = cg.TakeScreenshot(this.txtScreenshotName.Text);
             InsertCode(code);
+        }
+
+        private void GenerateSelector(object sender, EventArgs e)
+        {
+            int nthOfType = 0;
+            int nthChild = 0;
+            switch (cbNth.Text)
+            {
+                case "同類型":
+                    if (numNth.Value > 0)
+                    {
+                        nthOfType = (int)numNth.Value;
+                    }
+                    break;
+                case "子節點":
+                    if (numNth.Value > 0)
+                    {
+                        nthChild = (int)numNth.Value;
+                    }
+                    break;
+            }
+            this.txtSelector.Text = new CodeGenerator().CssSelector(this.elementInfo.TagName, this.elementInfo.Attributes, nthOfType, nthChild);
         }
     }
 }

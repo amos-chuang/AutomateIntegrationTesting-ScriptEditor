@@ -8,6 +8,7 @@ namespace aBotScriptEditor.Models
 {
     class ElementInfo
     {
+        public string CssSelector { get; set; }
         public string TagName { get; set; }
         public Dictionary<string, string> Attributes { get; set; }
         public string Value { get; set; }

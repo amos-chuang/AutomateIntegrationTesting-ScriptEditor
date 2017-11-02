@@ -21,7 +21,7 @@ namespace aBotScriptEditor.Services
             return result;
         }
 
-        public string CssSelector(string tagName, Dictionary<string, string> attributes)
+        public string CssSelector(string tagName, Dictionary<string, string> attributes,int nthOfType=0,int nthChild=0)
         {
             if (tagName != null)
             {
@@ -40,6 +40,14 @@ namespace aBotScriptEditor.Services
                 condition = String.Join("", conditionList);
             }
             string result = tagName + condition;
+            if (nthOfType > 0)
+            {
+                result += String.Format(":nth-of-type({0})", nthOfType);
+            }
+            if (nthChild > 0)
+            {
+                result += String.Format(":nth-child({0})", nthChild);
+            }
             return result;
         }
 
@@ -51,21 +59,21 @@ namespace aBotScriptEditor.Services
 
         public string Click(ElementInfo ei)
         {
-            string selector = CssSelector(ei.TagName, ei.Attributes);
+            string selector = ei.CssSelector;
             string result = String.Format("browser.click(\"{0}\");", selector);
             return result;
         }
 
         public string SetValue(ElementInfo ei, string value)
         {
-            string selector = CssSelector(ei.TagName, ei.Attributes);
+            string selector = ei.CssSelector;
             string result = String.Format("browser.setValue(\"{0}\",\"{1}\");", selector, value);
             return result;
         }
 
         public string WaitForExist(ElementInfo ei)
         {
-            string selector = CssSelector(ei.TagName, ei.Attributes);
+            string selector = ei.CssSelector;
             string result = String.Format("browser.waitForExist(\"{0}\");", selector);
             return result;
         }
@@ -78,7 +86,7 @@ namespace aBotScriptEditor.Services
 
         public string GetAttribute(ElementInfo ei, string varName, string attrName)
         {
-            string selector = CssSelector(ei.TagName, ei.Attributes);
+            string selector = ei.CssSelector;
             string result = "";
             switch (attrName)
             {
